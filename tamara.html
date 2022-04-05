@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  class="fp-enabled"
+  style="overflow: hidden; height: 100%"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Webdocumentary</title>
+
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/scroll.css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+  </head>
+
+  <body>
+    <div id="myContainer">
+      <div class="section" id="sectionVideo">
+        <a href="/index.html">
+            <img src="/images/back.svg" id="back" />
+          </a>
+        <div class="intro personal-intro" id="video-div">
+          <video controls id="main-video">
+            <source src="/videos/personal/tam.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <img src="/images/shape2.png" id="shape1" />
+      </div>
+      <div class="section" id="section0">
+        <div class="intro">
+          <h2>About Tamara R.</h2>
+          <p>
+            My name is Tamara Rabusicova and I am 20 years old. I am from Slovakia. After I got inspiration from my family members I decided to visit Medical High School. My mother and grandmother were nurses so that is where my inspiration came from. When I was deciding where to study next, I met my boyfriend. After a while, we started thinking about studying in Denmark. You may ask if I was 100% sure? No. Definitely not. I had a lot of questions regarding to programmes, study and housing. However, my biggest advantage was my boyfriend’s sister. She used to study in Denmark for 5 years, so I had much information from right hand. After very bad experience with the student agency, when I was running out of energy and nerves, I could always write to her and ask whatever. She helped me a lot, and I very much wish to you, have such a person as I had, person who show you what real life is like, helps with the choice and final decision, sell information and knowledge. I find this decision as one of my best decisions of my life. As you could see above, I was studying Medical school and now I am here, on BAA currently studying Multimedia design. It was a really big difference between my study field and also I had zero experience with coding, and design. But it was exciting, thrilling and you should try this adventure as well as we all did.
+          </p>
+        </div>
+        <img src="/images/shape.png" id="shape" />
+      </div>
+      <div class="section" id="section-photos">
+          <div class="intro">
+            <h2>Tamara's life</h2>
+          </div>
+          <div class="justify-content-space-between">
+            <div>
+              <img src="/images/tam/1.jpg" alt="Avatar" />
+            </div>
+            <div>
+              <img src="/images/tam/2.JPG" alt="Avatar" />
+            </div>
+            <div>
+              <img src="/images/tam/3.jpg" alt="Avatar" />
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/velocity.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/scroll.js"></script>
+    <script
+      type="text/javascript"
+      src="js/fullpage.scrollHorizontally.min.js"
+    ></script>
+
+    <script type="text/javascript" src="js/fullpage.extensions.min.js"></script>
+
+    <script type="text/javascript">
+      jQuery(function ($) {
+        $("#myContainer").fullpage({
+          anchors: ["tamaraVideo", "aboutTamara", "tamarasLife"],
+          sectionsColor: ["#E6E6E6", "#E6E6E6", "#010101"],
+          navigation: true,
+          navigationPosition: "right",
+          navigationTooltips: ["Tamara's video", "About Tamara", "Tamara's life"],
+          menu: "#menu",
+          slidesNavigation: false,
+          scrollHorizontally: true,
+          afterSlideLoad: function (section, origin, destination, direction) {
+            console.log({
+              section: section,
+              origin: origin,
+              destination: destination,
+              direction: direction,
+            });
+          },
+          onSlideLeave: function (section, origin, destination, direction) {
+            console.log({
+              section: section,
+              origin: origin,
+              destination: destination,
+              direction: direction,
+            });
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

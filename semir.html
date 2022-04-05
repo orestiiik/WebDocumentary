@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  class="fp-enabled"
+  style="overflow: hidden; height: 100%"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Webdocumentary</title>
+
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/scroll.css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+  </head>
+
+  <body>
+    <div id="myContainer">
+      <div class="section" id="sectionVideo">
+        <a href="/index.html">
+            <img src="/images/back.svg" id="back" />
+          </a>
+        <div class="intro personal-intro" id="video-div">
+          <video controls id="main-video">
+            <source src="/videos/personal/semir.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <img src="/images/shape2.png" id="shape1" />
+      </div>
+      <div class="section" id="section0">
+        <div class="intro">
+          <h2>About Semir K.</h2>
+          <p>
+            Hi, I'm Semir. I am 19 years old and I come from Bulgaria. I am the typical gamer boy who likes to spend his free time playing video games. Before applying to BAAA I wasn't sure that my personality would fit most of the students here as I am an introverted person who doesn't go out partying much but rather stays home. That kind of made me reconsider if I should apply and go to a foreign country where I don't know anyone. But at the same time I was also thinking  "Why don't I just try it, at least I will meet new people". And I think that was the better choice because I met more than just "new people". Everyone from BAAA is a person that is always willing to help whether he/she would be a teacher or a classmate. So if you are coming with little to none experience do not overthink it because the way teachers approach each subject is  understandable for each student. As for my gaming hobby I still play video games when I have free time but that didn't change me from the other students, rather than that I met people who share the same passion and interest in gaming. The subjects in the BAAA are all interesting no matter which course you choose as they are all oriented in group projects. That way students learn to work together with each other which is really good because they learn how to be good in teams. The whole experience in BAAA is astonishing and I recommend to every student who is in doubt whether to apply or not to Just do it and they will not regret their decision.
+          </p>
+        </div>
+        <img src="/images/shape.png" id="shape" />
+      </div>
+      <div class="section" id="section-photos">
+          <div class="intro">
+            <h2>Semir's life</h2>
+          </div>
+          <div class="justify-content-space-between">
+            <div>
+              <img src="/images/semir/1.jpg" alt="Avatar" />
+            </div>
+            <div>
+              <img src="/images/semir/2.jpg" alt="Avatar" />
+            </div>
+            <div>
+              <img src="/images/semir/3.jpg" alt="Avatar" />
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/velocity.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/scroll.js"></script>
+    <script
+      type="text/javascript"
+      src="js/fullpage.scrollHorizontally.min.js"
+    ></script>
+
+    <script type="text/javascript" src="js/fullpage.extensions.min.js"></script>
+
+    <script type="text/javascript">
+      jQuery(function ($) {
+        $("#myContainer").fullpage({
+          anchors: ["semirVideo", "aboutSemir", "semirsLife"],
+          sectionsColor: ["#E6E6E6", "#E6E6E6", "#010101"],
+          navigation: true,
+          navigationPosition: "right",
+          navigationTooltips: ["Semir's video", "About Semir", "Semir's life"],
+          menu: "#menu",
+          slidesNavigation: false,
+          scrollHorizontally: true,
+          afterSlideLoad: function (section, origin, destination, direction) {
+            console.log({
+              section: section,
+              origin: origin,
+              destination: destination,
+              direction: direction,
+            });
+          },
+          onSlideLeave: function (section, origin, destination, direction) {
+            console.log({
+              section: section,
+              origin: origin,
+              destination: destination,
+              direction: direction,
+            });
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

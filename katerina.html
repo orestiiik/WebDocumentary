@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  class="fp-enabled"
+  style="overflow: hidden; height: 100%"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Webdocumentary</title>
+
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/scroll.css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+  </head>
+
+  <body>
+    <div id="myContainer">
+      <div class="section" id="sectionVideo">
+        <a href="/index.html">
+          <img src="/images/back.svg" id="back" />
+        </a>
+        <div class="intro personal-intro" id="video-div">
+          <video controls id="main-video">
+            <source src="/videos/personal/kate.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <img src="/images/shape2.png" id="shape1" />
+      </div>
+      <div class="section" id="section0">
+        <div class="intro">
+          <h2>About Kate S.</h2>
+          <p>
+            Hi! My name is Kate, I’m 20 and I’m from the Czech Republic. Before
+            coming to BAA I had zero experience with any Multimedia design but
+            they made a great job of teaching everything right from the start so
+            now I have more knowledge and I am just improving more and more. I
+            have lot of hobbies too and they change depending on the mood, time
+            of the year, and people I hang out with. I love gaming and
+            streaming, that’s something I do pretty often either together or
+            separately. I also paint, draw… well, I do ART for a long time now
+            and I like trying new techniques. I play piano for few years and I’m
+            learning to play Ukulele currently. Music is something that I can’t
+            leave out of my life. I love working out and sports such as
+            volleyball, basketball or tennis, and many others. But as active as
+            I might sound I also enjoy relaxing evenings with good snacks, movie
+            and warm blankets.
+          </p>
+        </div>
+        <img src="/images/shape.png" id="shape" />
+      </div>
+      <div class="section" id="section-photos">
+        <div class="intro">
+          <h2>Kate's life</h2>
+        </div>
+        <div class="justify-content-space-between">
+          <div>
+            <img src="/images/kate/3.JPG" alt="Avatar" />
+          </div>
+          <div>
+            <img src="/images/kate/2.JPG" alt="Avatar" />
+          </div>
+          <div>
+            <img src="/images/kate/1.jpg" alt="Avatar" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/velocity.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/scroll.js"></script>
+    <script
+      type="text/javascript"
+      src="js/fullpage.scrollHorizontally.min.js"
+    ></script>
+
+    <script type="text/javascript" src="js/fullpage.extensions.min.js"></script>
+
+    <script type="text/javascript">
+      jQuery(function ($) {
+        $("#myContainer").fullpage({
+          anchors: ["kateVideo", "aboutKate", "katesLife"],
+          sectionsColor: ["#E6E6E6", "#E6E6E6", "#010101"],
+          navigation: true,
+          navigationPosition: "right",
+          navigationTooltips: ["Kate video", "About Kate", "Kate's life"],
+          menu: "#menu",
+          slidesNavigation: false,
+          scrollHorizontally: true,
+          afterSlideLoad: function (section, origin, destination, direction) {
+            console.log({
+              section: section,
+              origin: origin,
+              destination: destination,
+              direction: direction,
+            });
+          },
+          onSlideLeave: function (section, origin, destination, direction) {
+            console.log({
+              section: section,
+              origin: origin,
+              destination: destination,
+              direction: direction,
+            });
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
