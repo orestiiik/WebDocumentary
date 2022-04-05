@@ -4,6 +4,7 @@ setTimeout(function () {
   document.querySelector('.welcome-section h1:nth-child(7)').velocity({ opacity: 0 }, {duration: 3000});
 
 }, 800)
+
 function fadeOutEffect() {
   window.location.href = "/index.html#video";
     var fadeTarget = document.getElementById("welcome");
